@@ -186,6 +186,7 @@ alias gm='git merge'
 
 # gp - git push, gp! - git push all branches and their tags!
 alias gp='git push'
+alias gpu='git push -u'
 alias gp!='_() {git push $1 && git push --tags $1}; _'
 alias gpd='git push --dry-run'
 alias gpdr='gpd'
