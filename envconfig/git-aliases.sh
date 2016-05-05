@@ -39,6 +39,7 @@ function galias() {
 #| grv -- git revert
 #| gs - git status
 #| gshow, gcat -- git show/cat file content
+#| gsl -- git shortlog
 #| gsta -- git stash
 #| gt - git tag && verify-tag
 #| gwip - git wip(Work in Progress)
@@ -149,8 +150,11 @@ alias gcp='git cherry-pick'
 # gd - git diff
 alias gd='git diff'
 alias gdca='git diff --cached'
+alias gdck='git diff --check'
+alias gdcc='git diff --cached --check'
 alias gdt='git diff-tree --no-commit-id --name-only -r'
 alias gdw='git diff --word-diff'
+alias gdwc='git diff --cached --word-diff'
 
 # gf - git fetch
 alias gf='git fetch'
@@ -182,6 +186,10 @@ alias gls~='git ls-files --others --exclude-standard'
 
 # gm - git merge
 alias gm='git merge'
+
+# gmb, ganc -- git merge-base, get common ancestor commit
+alias gmb='git merge-base'
+alias ganc='gmb'
 
 # gp - git push, gp! - git push all branches and their tags!
 alias gp='git push'
@@ -237,6 +245,9 @@ alias gst='git -c pager.status=less status -vv'
 # Show file content for specific file: gshow HEAD@{2018-08-01}:example.txt
 alias gshow='git show'
 alias gcat='gshow'
+
+# gsl -- git shortlog
+alias gsl='git shortlog'
 
 # gsta -- git stash
 alias gsta='git stash'
