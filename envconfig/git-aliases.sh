@@ -25,7 +25,6 @@ function galias() {
 #| gd - git diff
 #| gf - git fetch
 #| gignore, gignored, gignore~, gunignore - git ignore or unignore files
-#| git unignore files
 #| glg, glog - git log
 #| glt - git 'log-tree'
 #| glast - git 'last-log'
@@ -162,7 +161,7 @@ alias gignore='git update-index --assume-unchanged'
 alias gignored='git ls-files -v \| grep "^[[:lower:]]"'
 # git unignore files
 alias gignore~='git update-index --no-assume-unchanged'
-alias gunignore='git update-index --no-assume-unchanged'
+alias gunignore='gignore~'
 
 # glg, glog - git log
 alias glg='git log --oneline --decorate --color'
