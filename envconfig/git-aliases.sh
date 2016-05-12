@@ -38,6 +38,7 @@ function galias() {
 #| gr - git remote
 #| grb -- git rebase
 #| grs -- git reset
+#| grs! -- git reset --hard
 #| grt -- git root
 #| grv -- git revert
 #| gs - git status
@@ -235,9 +236,14 @@ alias grbc='git rebase --continue'
 alias grbs='git rebase --skip'
 
 # grs -- git reset
-alias grs='git reset HEAD --'
-alias grsh='git reset HEAD'
-alias grsh!='git reset --hard HEAD'
+alias grs='git reset'
+alias grsh='git reset HEAD --'
+alias gunstage='grsh'
+
+# grs! -- git reset --hard
+alias grs!='git reset --hard'
+alias grsh!='git reset --hard HEAD --'
+alias gunstage!='grsh!'
 
 # grt -- git root
 alias grt='cd $(git rev-parse --show-toplevel || echo ".")'
