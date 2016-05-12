@@ -203,6 +203,7 @@ alias glast='git log -1 --log-size -p'
 # glf -- git ls-files, glf~ -- list untracked files or folders under current dir
 alias glf='git ls-files'
 alias glf~='git ls-files --others --directory'
+alias glfi='git ls-files --others --ignored --exclude-standard --directory'
 
 # gll, gls  -- git ls-tree, list tracked files with properties or tracked files in columns
 # suffix 'r' will output sub git repo in new block alone
