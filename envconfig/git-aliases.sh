@@ -39,6 +39,7 @@ function galias() {
 #| gpl -- git pull
 #| gr - git remote
 #| grb -- git rebase
+#| grm -- git rm, grm~ -- untrack file[s]
 #| grs -- git reset
 #| grs! -- git reset --hard
 #| grt -- git root
@@ -257,6 +258,10 @@ alias grbi='git rebase -i'
 alias grba='git rebase --abort'
 alias grbc='git rebase --continue'
 alias grbs='git rebase --skip'
+
+# grm -- git rm, grm~ -- untrack file[s]
+alias grm='git rm'
+alias grm~='git rm --cached'
 
 # grs -- git reset
 alias grs='git reset'
