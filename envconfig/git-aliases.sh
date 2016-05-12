@@ -23,6 +23,8 @@ function galias() {
 #| gco -- git checkout
 #| gcp -- git cherry-pick
 #| gd - git diff
+#| gd! - git diff --cached
+#| gdt -- git diff-tree
 #| gf - git fetch
 #| gignore, gignored, gignore~, gunignore - git ignore or unignore files
 #| glg, glog - git log
@@ -152,12 +154,20 @@ alias gcp='git cherry-pick'
 alias gd='git diff'
 alias gda='git diff -U99999'
 alias greview='gda'
-alias gdca='git diff --cached'
 alias gdck='git diff --check'
-alias gdcc='git diff --cached --check'
-alias gdt='git diff-tree --no-commit-id --name-only -r'
 alias gdw='git diff --word-diff'
-alias gdwc='git diff --cached --word-diff'
+
+# gd! - git diff --cached
+alias gd!='git diff --cached'
+alias gda!='git diff --cached -U99999'
+alias greview!='gda!'
+alias gdck!='git diff --cached --check'
+alias gdw!='git diff --cached --word-diff'
+
+# gdt -- git diff-tree
+# Use '--' to separate paths from revisions, like this:
+# 'gdt [<revision>...] -- [<file>...]'
+alias gdt='git diff-tree --no-commit-id --name-only -r'
 
 # gf - git fetch
 alias gf='git fetch'
