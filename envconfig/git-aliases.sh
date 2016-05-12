@@ -219,6 +219,7 @@ alias ganc='gmb'
 # gp - git push, gpp - git push all branches and their tags
 alias gp='git push'
 alias gpu='git push -u'
+alias gpdb='git push --delete'
 alias gpp='_() {git push $1 && git push --tags $1}; _'
 alias gpd='git push --dry-run'
 alias gpdr='gpd'
