@@ -150,7 +150,9 @@ alias gclean!='git clean -df'
 
 # gco -- git checkout
 alias gco='git checkout'
+alias gco-='git checkout -' # checkout the previous branch
 alias gcob='git checkout -b'
+alias gcoo='git checkout --orphan'
 
 # gcp -- git cherry-pick
 alias gcp='git cherry-pick'
