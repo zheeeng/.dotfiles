@@ -33,7 +33,8 @@ function galias() {
 #| gls -- git ls-files
 #| gm - git merge
 #| gmb, ganc -- git merge-base, get common ancestor commit
-#| gp - git push, gp! - git push all branches and their tags!
+#| gp - git push, gpp - git push all branches and their tags
+#| gp! - git push --force
 #| gpl -- git pull
 #| gr - git remote
 #| grb -- git rebase
@@ -206,13 +207,21 @@ alias gm='git merge'
 alias gmb='git merge-base'
 alias ganc='gmb'
 
-# gp - git push, gp! - git push all branches and their tags!
+# gp - git push, gpp - git push all branches and their tags
 alias gp='git push'
 alias gpu='git push -u'
-alias gp!='_() {git push $1 && git push --tags $1}; _'
+alias gpp='_() {git push $1 && git push --tags $1}; _'
 alias gpd='git push --dry-run'
 alias gpdr='gpd'
 alias gpt='git push --tags'
+
+# gp! - git push --force
+alias gp!='git push --force'
+alias gpu!='git push --force -u'
+alias gpp!='_() {git push --force $1 && git push --tags --force $1}; _'
+alias gpd!='git push --dry-run --force'
+alias gpdr!='gpd!'
+alias gpt!='git push --tags --force'
 
 # gpl -- git pull
 alias gpl='git pull --tags'
