@@ -56,6 +56,7 @@ alias g='git'
 
 # ga - git add
 alias ga='git add'
+alias gaf='git add --force'
 alias gaa='git add --all'
 alias gapa='git add --patch'
 # gac -- git add && commit
@@ -68,7 +69,7 @@ alias gacmsg!='gacmsg'
 
 # gb - git branch
 alias gb='git branch'
-alias gb!='git branch --force'
+alias gbf='git branch --force'
 alias gba='git branch -avv'
 alias gbranches='gba'
 alias gbm='git branch --merged'
