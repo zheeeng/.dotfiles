@@ -30,7 +30,8 @@ function galias() {
 #| glg, glog - git log
 #| glt - git 'log-tree'
 #| glast - git 'last-log'
-#| gls -- git ls-files
+#| glf -- git ls-files, glf~ -- list untracked files or folders under current dir
+#| gll, gls  -- git ls-tree, list tracked files with properties or tracked files in columns
 #| gm - git merge
 #| gmb, ganc -- git merge-base, get common ancestor commit
 #| gp - git push, gpp - git push all branches and their tags
@@ -196,9 +197,16 @@ alias gltw='git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset
 # glast - git 'last-log'
 alias glast='git log -1 --log-size -p'
 
-# gls -- git ls-files
-alias gls='git ls-files'
-alias gls~='git ls-files --others --exclude-standard'
+# glf -- git ls-files, glf~ -- list untracked files or folders under current dir
+alias glf='git ls-files'
+alias glf~='git ls-files --others --directory'
+
+# gll, gls  -- git ls-tree, list tracked files with properties or tracked files in columns
+# suffix 'r' will output sub git repo in new block alone
+alias gll='_() { ls -dlhG $(git ls-tree --name-only ${1-HEAD}) }; _'
+alias gls='_() { ls -dG $(git ls-tree --name-only ${1-HEAD}) }; _'
+alias gllr='_() { ls -lhG $(git ls-tree -r --name-only ${1-HEAD}) }; _'
+alias glsr='_() { ls -G $(git ls-tree -r --name-only ${1-HEAD}) }; _'
 
 # gm - git merge
 alias gm='git merge'
