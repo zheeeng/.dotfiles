@@ -30,6 +30,7 @@ function galias() {
 #| glast - git 'last-log'
 #| gls -- git ls-files
 #| gm - git merge
+#| gmb, ganc -- git merge-base, get common ancestor commit
 #| gp - git push, gp! - git push all branches and their tags!
 #| gpl -- git pull
 #| gr - git remote
@@ -147,8 +148,10 @@ alias gcob='git checkout -b'
 # gcp -- git cherry-pick
 alias gcp='git cherry-pick'
 
-# gd - git diff
+# gd - git diff, gda - code review
 alias gd='git diff'
+alias gda='git diff -U99999'
+alias greview='gda'
 alias gdca='git diff --cached'
 alias gdck='git diff --check'
 alias gdcc='git diff --cached --check'
