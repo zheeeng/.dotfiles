@@ -72,12 +72,12 @@ alias gb='git branch'
 alias gbf='git branch --force'
 alias gba='git branch -avv'
 alias gbranches='gba'
+alias gbd='git branch -d'
 alias gbm='git branch --merged'
 alias gbnm='git branch --no-merged'
-alias gbus='git branch --set-upstream-to`'
-# unset branch upstream
-alias gbus~='git branch --unset-upstream'
-alias gbunus='gbus~'
+alias gbu='git branch --set-upstream-to`'
+alias gbu~='git branch --unset-upstream'
+
 # delete marged branches
 alias gbdm='_() { git branch --merged ${1-master} | grep -v " ${1-master}$" | xargs -n 1 git branch -d; }; _'
 alias gbdmerged='gbdm'
