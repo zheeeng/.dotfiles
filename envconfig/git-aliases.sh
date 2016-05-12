@@ -292,11 +292,15 @@ alias gsl='git shortlog'
 
 # gsta -- git stash
 alias gsta='git stash'
+alias gstau='git stash --include-untracked' # Above git version 1.7.7, use it replace gwip
 alias gstaa='git stash apply'
-alias gstad='git stash drop'
+alias gstac!='git stash clear'
+alias gstac='echo "CAUTION: Use \"gstac!\" to clear all stored stashes."'
+alias gstad!='git stash drop'
+alias gstad='echo "CAUTION: Use \"gstad!\" to drop the stash."'
 alias gstal='git stash list'
-alias gstap='git stash list pop'
-alias gstas='git stash list show --text'
+alias gstap='git stash pop'
+alias gstas='git stash show --text'
 
 # gt - git tag && verify-tag
 alias gt='git tag'
