@@ -103,6 +103,7 @@ alias gbss='git bisect start'
 # gc - git commit (end with '!' means --amend)
 alias gc='git commit -v'
 alias gc!='git commit -v --amend'
+alias gc!!='git commit --amend --no-edit'
 alias gca='git commit -v -a'
 alias gca!='git commit -v -a --amend'
 alias gcm='git commit -m'
