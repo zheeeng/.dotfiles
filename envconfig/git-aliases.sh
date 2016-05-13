@@ -40,7 +40,8 @@ function galias() {
 #| gr - git remote
 #| grb -- git rebase
 #| grm -- git rm, grm~ -- untrack file[s]
-#| grs -- git reset
+#| grs -- git reset --mixed
+#| grs~ -- git reset
 #| grs! -- git reset --hard
 #| grt -- git root
 #| grv -- git revert
@@ -262,10 +263,15 @@ alias grbs='git rebase --skip'
 alias grm='git rm'
 alias grm~='git rm --cached'
 
-# grs -- git reset
-alias grs='git reset'
-alias grsh='git reset HEAD --'
+# grs -- git reset --mixed
+alias grs='git reset --mixed'
+alias grsh='git reset --mixed HEAD --'
 alias gunstage='grsh'
+
+# grs~ -- git reset --soft
+alias grs~='git reset --soft'
+alias grsh~='git reset --soft HEAD --'
+alias gunstage~='grsh~'
 
 # grs! -- git reset --hard
 alias grs!='git reset --hard'
