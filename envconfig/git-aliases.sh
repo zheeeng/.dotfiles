@@ -201,7 +201,7 @@ alias gunignore='gignore~'
 
 # glg, glog - git log
 alias glg='git log --oneline --decorate --color'
-alias glog='git log --stat --decorate --color -p'
+alias glog='git log --stat --notes --show-signature --decorate --color -p'
 
 # glt - git 'log-tree'
 alias glt='git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit'
@@ -210,7 +210,7 @@ alias glta='git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset
 alias gltw='git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit --all --reflog'
 
 # glast - git 'last-log'
-alias glast='git log -1 --log-size -p'
+alias glast='git log -1 --notes --show-signature --log-size -p'
 
 # glf -- git ls-files, glf~ -- list untracked files or folders under current dir
 alias glf='git ls-files'
