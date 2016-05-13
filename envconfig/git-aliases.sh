@@ -26,6 +26,7 @@ function galias() {
 #| gd! - git diff --cached
 #| gdt -- git diff-tree
 #| gf - git fetch
+#| gi - git init
 #| gignore, gignored, gignore~, gunignore - git ignore or unignore files
 #| glg, glog - git log
 #| glt - git 'log-tree'
@@ -183,7 +184,12 @@ alias gdt='git diff-tree --no-commit-id --name-only -r'
 alias gf='git fetch'
 alias gfa='git fetch --all --tags --prune'
 
-# gignore, gignored, gignore~, gunignore - git ignore or unignore files
+# gi - git init
+alias gi='git init'
+alias ginit='gi'
+alias gib='git init --bare'
+
+# gignore, gignored, gignore~, gunignore -- git ignore or unignore files
 alias gignore='git update-index --assume-unchanged'
 alias gignored='git ls-files -v \| grep "^[[:lower:]]"'
 # git unignore files
