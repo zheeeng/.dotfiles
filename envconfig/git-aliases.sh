@@ -249,7 +249,6 @@ alias grrn='git remote rename'
 alias grgu='git remote get-url'
 alias grsu='git remote set-url'
 alias grp='git remote prune'
-alias grs='git remote show'
 alias gru='git remote update'
 
 # grb -- git rebase
