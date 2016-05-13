@@ -149,6 +149,7 @@ alias gclone='gcl'
 
 # gclean! -- git clean
 alias gclean!='git clean -df'
+alias gclean='echo "Running in dry-run mode. \n Note: Run \"gclean!\" to perform the UNRECOVERABLE clean operation."; git clean -dfn'
 
 # gco -- git checkout
 alias gco='git checkout'
