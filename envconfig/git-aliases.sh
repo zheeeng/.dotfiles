@@ -11,6 +11,7 @@ function galias() {
 #| g - git
 #| ga - git add
 #| gac -- git add && commit
+#| gar -- git archive
 #| gb - git branch
 #| gbl -- git blame
 #| gbs -- git bisect
@@ -70,6 +71,13 @@ alias gacm='git add -A . && git commit -m'
 alias gacm!='git add -A . && git commit --amend -m'
 alias gacmsg='gacm'
 alias gacmsg!='gacmsg'
+
+# gar -- git archive
+alias gar='git archive'
+alias gargz='_() { ish=${1-HEAD}; if [ -n "`git rev-parse --verify $ish`" ]; then ver=`(git describe $ish || git describe --tags $ish) 2> /dev/null`; if [ -n  "$ver" ]; then if [ -n "$2" ]; then file=`echo $2 | sed "s/\(.*\)\.tar.gz/\1/;s/.*/&.tar.gz/"`; else file=`basename \`git rev-parse --show-toplevel\``"-$ver".tar.gz; fi; if [ ! -f "$file" ]; then git archive "$ish" --format=tar.gz --prefix="$ish/" -o "$file"; else echo "File \"$file\" already exists. Use \"gstac!\" force archiving. "; fi; else echo "No tags can describe this commit. "; fi; fi; }; _'
+alias gartar='_() { ish=${1-HEAD}; if [ -n "`git rev-parse --verify $ish`" ]; then ver=`(git describe $ish || git describe --tags $ish) 2> /dev/null`; if [ -n  "$ver" ]; then if [ -n "$2" ]; then file=`echo $2 | sed "s/\(.*\)\.tar/\1/;s/.*/&.tar/"`; else file=`basename \`git rev-parse --show-toplevel\``"-$ver".tar; fi; if [ ! -f "$file" ]; then git archive "$ish" --format=tar --prefix="$ish/" -o "$file"; else echo "File \"$file\" already exists. Use \"gstac!\" force archiving. "; fi; else echo "No tags can describe this commit. "; fi; fi; }; _'
+alias gartgz='_() { ish=${1-HEAD}; if [ -n "`git rev-parse --verify $ish`" ]; then ver=`(git describe $ish || git describe --tags $ish) 2> /dev/null`; if [ -n  "$ver" ]; then if [ -n "$2" ]; then file=`echo $2 | sed "s/\(.*\)\.tgz/\1/;s/.*/&.tgz/"`; else file=`basename \`git rev-parse --show-toplevel\``"-$ver".tgz; fi; if [ ! -f "$file" ]; then git archive "$ish" --format=tgz --prefix="$ish/" -o "$file"; else echo "File \"$file\" already exists. Use \"gstac!\" force archiving. "; fi; else echo "No tags can describe this commit. "; fi; fi; }; _'
+alias garzip='_() { ish=${1-HEAD}; if [ -n "`git rev-parse --verify $ish`" ]; then ver=`(git describe $ish || git describe --tags $ish) 2> /dev/null`; if [ -n  "$ver" ]; then if [ -n "$2" ]; then file=`echo $2 | sed "s/\(.*\)\.zip/\1/;s/.*/&.zip/"`; else file=`basename \`git rev-parse --show-toplevel\``"-$ver".zip; fi; if [ ! -f "$file" ]; then git archive "$ish" --format=zip --prefix="$ish/" -o "$file"; else echo "File \"$file\" already exists. Use \"gstac!\" force archiving. "; fi; else echo "No tags can describe this commit. "; fi; fi; }; _'
 
 # gb - git branch
 alias gb='git branch'
