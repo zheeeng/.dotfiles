@@ -23,6 +23,7 @@ function galias() {
 #| gclean! -- git clean
 #| gco -- git checkout
 #| gcp -- git cherry-pick
+#| gcount -- git count-objects
 #| gd - git diff
 #| gd! - git diff --cached
 #| gdt -- git diff-tree
@@ -177,6 +178,9 @@ alias gcoo='git checkout --orphan'
 
 # gcp -- git cherry-pick
 alias gcp='git cherry-pick'
+
+# gcount -- git count-objects
+alias gcount='git count-objects --human-readable'
 
 # gd - git diff, gda - code review
 alias gd='git diff'
