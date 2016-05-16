@@ -347,6 +347,7 @@ alias gstas='git stash show --text'
 
 # gt - git tag && verify-tag
 alias gt='git tag'
+alias gta='git tag -a'
 alias gts='git tag -s'
 alias gtv='git tag -v'
 alias gvt='git verify-tag'
