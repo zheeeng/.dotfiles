@@ -37,6 +37,7 @@ function galias() {
 #| gll, gls  -- git ls-tree, list tracked files with properties or tracked files in columns
 #| gm - git merge
 #| gmb, ganc -- git merge-base, get common ancestor commit
+#| gmv -- git mv
 #| gp - git push, gpp - git push all branches and their tags
 #| gp! - git push --force
 #| gpl -- git pull
@@ -248,6 +249,9 @@ alias gm='git merge'
 # gmb, ganc -- git merge-base, get common ancestor commit
 alias gmb='git merge-base'
 alias ganc='gmb'
+
+# gmv -- git mv
+alias gmv='git mv'
 
 # gp - git push, gpp - git push all branches and their tags
 alias gp='git push'
