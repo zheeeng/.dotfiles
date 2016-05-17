@@ -1,7 +1,7 @@
 # galias - get git aliases
 export _GITALIASFILE="$0"
 function galias() {
-    string=$(echo "$1" | sed 's/./&\.*/g')
+    string=$(echo "$1" | sed 's/./&\.\\{0,6\\}/g')
     sed -n "/^#\ g.*-\{1,2\}.*$string/,/^$/p" "$_GITALIASFILE" | sed '${/^$/d;}'
 }
 
