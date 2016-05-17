@@ -224,6 +224,9 @@ alias gdw!='git diff --cached --word-diff'
 # 'gdt [<revision>...] -- [<file>...]'
 alias gdt='git diff-tree --no-commit-id --name-only -r'
 
+# gdvim -- git difftool --tool=vimdiff
+alias gdvim='git difftool --tool=vimdiff -U99999'
+
 # gde -- git describe
 alias gde='git describe'
 alias gdescribe='gdesc'
