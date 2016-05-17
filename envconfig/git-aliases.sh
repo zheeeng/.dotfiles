@@ -22,6 +22,8 @@ function galias() {
 #| gcl -- git clone
 #| gclean! -- git clean
 #| gco -- git checkout
+#| gco~ -- git checkout -m, checkout with three-way merge
+#| gco! -- git checkout -f
 #| gcp -- git cherry-pick
 #| gcount -- git count-objects
 #| gd - git diff
@@ -174,7 +176,27 @@ alias gclean='echo "Running in dry-run mode. \n Note: Run \"gclean!\" to perform
 alias gco='git checkout'
 alias gco-='git checkout -' # checkout the previous branch
 alias gcob='git checkout -b'
+alias gcoB='git checkout -B' # equal to git branch -f
 alias gcoo='git checkout --orphan'
+
+# gco~ -- git checkout -m, checkout with three-way merge
+alias gco~='git checkout -m'
+alias gco-~='git checkout -m -'
+alias gcob~='git checkout -m -b'
+alias gcoB~='git checkout -m -B'
+alias gcoo~='git checkout -m --orphan'
+
+# gco! -- git checkout -f
+alias gco!='git checkout -f'
+alias gco-!='git checkout -f -'
+alias gcob!='git checkout -f -b'
+alias gcoB!='git checkout -f -B'
+alias gcoo!='git checkout -f --orphan'
+alias gco~!='git checkout -f -m'
+alias gco-~!='git checkout -f -m -'
+alias gcob~!='git checkout -f -m -b'
+alias gcoB~!='git checkout -f -m -B'
+alias gcoo~!='git checkout -f -m --orphan'
 
 # gcp -- git cherry-pick
 alias gcp='git cherry-pick'
