@@ -359,6 +359,7 @@ alias gcat='git cat-file -p'
 
 # gsl -- git shortlog
 alias gsl='git shortlog'
+alias gslnm='git shortlog --no-merges'
 
 # gsm -- git submodule
 alias gsm='git submodule'
