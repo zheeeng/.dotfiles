@@ -55,6 +55,7 @@ function galias() {
 #| gs - git status
 #| gshow, gcat -- git show/cat file content
 #| gsl -- git shortlog
+#| gsm -- git submodule
 #| gsta -- git stash
 #| gt - git tag && verify-tag
 #| gwip - git wip(Work in Progress)
@@ -358,6 +359,24 @@ alias gcat='gshow'
 
 # gsl -- git shortlog
 alias gsl='git shortlog'
+
+# gsm -- git submodule
+alias gsm='git submodule'
+alias gsma='git submodule add'
+alias gsmf='git submodule foreach'
+alias gsmfr='git submodule foreach --recursive'
+alias gsmi='git submodule init'
+alias gsmi~='git submodule deinit'
+alias gsmi~!='git submodule deinit --force'
+alias gsmdi='gsmi~'
+alias gsmdi!='gsmi~!'
+alias gsms='git submodule status --recursive'
+alias gsmsum='git submodule summary'
+alias gsmsummary='gsmsum'
+alias gsmsync='git submodule sync --recursive'
+alias gsmu='git submodule update --init --recursive'
+alias gsmpla='_() { git submodule foreach --recursive git pull ${1-origin} ${2-master} }; _'
+alias gsmpla!='_() { git submodule foreach --recursive git pull --force ${1-origin} ${2-master} }; _'
 
 # gsta -- git stash
 alias gsta='git stash'
