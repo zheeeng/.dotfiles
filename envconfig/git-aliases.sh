@@ -355,7 +355,7 @@ alias gst='git -c pager.status=less status -vv'
 # gshow, gcat -- git show/cat file content
 # Show file content for specific file: gshow HEAD@{2018-08-01}:example.txt
 alias gshow='git show'
-alias gcat='gshow'
+alias gcat='git cat-file -p'
 
 # gsl -- git shortlog
 alias gsl='git shortlog'
