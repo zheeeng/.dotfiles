@@ -276,6 +276,8 @@ alias glsr='_() { ls -G $(git ls-tree -r --name-only ${1-HEAD}) }; _'
 # gm - git merge
 alias gm='git merge'
 alias gmnf='git merge --no-ff'
+alias gmsq='git merge --squash'
+alias gmsquash='gmsq'
 
 # gmb, ganc -- git merge-base, get common ancestor commit
 alias gmb='git merge-base'
