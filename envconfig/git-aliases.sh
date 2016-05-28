@@ -413,6 +413,8 @@ alias gstas='git stash show --text'
 alias gt='git tag'
 alias gta='git tag -a'
 alias gts='git tag -s'
+alias gtp='gpt'
+alias gtp!='gpt!'
 alias gtv='git tag -v'
 alias gvt='git verify-tag'
 
