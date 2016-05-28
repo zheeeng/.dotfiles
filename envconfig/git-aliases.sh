@@ -134,20 +134,28 @@ alias gcamsg='gcam'
 alias gcamsg!='gcam!'
 
 # gcf -- git config
+# Writing operation: Write values into local configuration file by default.
+# Reading operation: Read from system, global and local configuration files in sequence by default.
 alias gcf='git config'
 alias gcfa='git config --add'
-alias gcfg='git config --get'
+alias gcfe='git config --edit'
+alias gcfg='git config --get-regexp'
 alias gcfl='git config --list'
 alias gcff='cat `git rev-parse --git-dir`/config'
 alias gcfrm='git config --remove-section'
 alias gcfrn='git config --rename-section'
+alias gcfso='git config --show-origin'
+alias gcfsoa='gcfl | cut -d= -f1 | while read line; do git config --show-origin $line; done'
 alias gcfu='git config --unset'
 alias gcfua='git config --unset-all'
 
 # gcf~ -- git config --local
+# Writing operation: Write values into the .git/config file of repository by default.
+# Reading operation: Read only from the .git/config file of repository.
 alias gcf~='git config --local'
 alias gcfa~='git config --local --add'
-alias gcfg~='git config --local --get'
+alias gcfe~='git config --local --edit'
+alias gcfg~='git config --local --get-regexp'
 alias gcfl~='git config --local --list'
 alias gcff~='cat `git rev-parse --git-dir`/config'
 alias gcfrm~='git config --local --remove-section'
@@ -156,9 +164,12 @@ alias gcfu~='git config --local --unset'
 alias gcfua~='git config --local --unset-all'
 
 # gcf! -- git config --global
+# Writing operation: Write values into the global ~/.gitconfig file, if this file doesn't exist, write into $XDG_CONFIG_HOME/git/config file if this file exists.
+# Reading operation: Read only from global ~/.gitconfig and from $XDG_CONFIG_HOME/git/config rather than from all available files.
 alias gcf!='git config --global'
 alias gcfa!='git config --global --add'
-alias gcfg!='git config --global --get'
+alias gcfe!='git config --global --edit'
+alias gcfg!='git config --global --get-regexp'
 alias gcfl!='git config --global --list'
 alias gcff!='if [ -f "$HOME/.gitconfig" ]; then cat "$HOME/.gitconfig"; elif [ -f "$XDG_CONFIG_HOME/git/config" ]; then cat "$XDG_CONFIG_HOME/git/config"; fi'
 alias gcfrm!='git config --global --remove-section'
