@@ -72,6 +72,7 @@ alias gap='git add --patch'
 alias gapa='gap'
 alias gai='git add --interactive'
 alias gau='git add --update'
+alias gaup='git add --update -p'
 # gac -- git add && commit
 alias gac='git add -A . && git commit'
 alias gac!='git add -A . && git commit --amend'
