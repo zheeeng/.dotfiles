@@ -214,6 +214,9 @@ alias gcoo~!='git checkout -f -m --orphan'
 
 # gcp -- git cherry-pick
 alias gcp='git cherry-pick'
+alias gcpa -- git cherry-pick --abort
+alias gcpc -- git cherry-pick --continue
+alias gcpq -- git cherry-pick --quit
 
 # gcount -- git count-objects
 alias gcount='git count-objects --human-readable'
