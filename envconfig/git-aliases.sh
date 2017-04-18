@@ -11,7 +11,7 @@ galias() {
         \r -u \t\t Unalias git commands\n'
 
     if [ $# -eq 0 ]; then
-        sed -n "/^#\ g.*-\{1,2\}.*/,/^$/p" "$_GIT_ALIAS_FILE" | sed '${/^$/d;}'
+        sed -n "/^#\ g.*-\{1,2\}.*/,/^$/p" $_GIT_ALIAS_FILE | sed "s/^alias\ //g"
         return 0
     fi
 
@@ -28,7 +28,7 @@ galias() {
                 ;;
             m)
                 string=$(echo $OPTARG | sed 's/./&\.\\{0,6\\}/g')
-                sed -n "/^#\ g.*-\{1,2\}.*$string/,/^$/p" "$_GIT_ALIAS_FILE" | sed '${/^$/d;}'
+                sed -n "/^#\ g.*-\{1,2\}.*$string/,/^$/p" $_GIT_ALIAS_FILE | sed "s/^alias\ //g"
                 return 0
                 ;;
             p)
