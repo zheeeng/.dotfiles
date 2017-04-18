@@ -1,8 +1,46 @@
 # galias - get git aliases
-export _GITALIASFILE="$0"
-function galias() {
-    string=$(echo "$1" | sed 's/./&\.\\{0,6\\}/g')
-    sed -n "/^#\ g.*-\{1,2\}.*$string/,/^$/p" "$_GITALIASFILE" | sed '${/^$/d;}'
+_GIT_ALIAS_FILE="$0"
+
+galias() {
+    usage='
+    \rOptions:
+        \r -a \t\t Alias common git commands to shorter ones
+        \r -h \t\t Print usage
+        \r -m [chars] \t List all fuzzy matched git command aliases
+        \r -p [prefix] \t Redefine git aliases ''prefix'', the default value is ''g''
+        \r -u \t\t Unalias git commands\n'
+
+    if [ $# -eq 0 ]; then
+        sed -n "/^#\ g.*-\{1,2\}.*/,/^$/p" "$_GIT_ALIAS_FILE" | sed '${/^$/d;}'
+        return 0
+    fi
+
+    local OPTIND
+
+    while getopts a:hm:p: OPT; do
+        case $OPT in
+            a)
+                echo 'aliases'
+                ;;
+            h)
+                echo $usage
+                return 0
+                ;;
+            m)
+                string=$(echo $OPTARG | sed 's/./&\.\\{0,6\\}/g')
+                sed -n "/^#\ g.*-\{1,2\}.*$string/,/^$/p" "$_GIT_ALIAS_FILE" | sed '${/^$/d;}'
+                return 0
+                ;;
+            p)
+                echo 'prefix'
+                return 0
+                ;;
+            \?)
+                echo $usage
+                return 1
+                ;;
+        esac
+    done
 }
 
 # git aliases outline - aliases <-> commands
