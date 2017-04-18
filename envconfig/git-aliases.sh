@@ -17,7 +17,7 @@ galias() {
 
     local OPTIND
 
-    while getopts a:hm:p: OPT; do
+    while getopts ahm:p: OPT; do
         case $OPT in
             a)
                 echo 'aliases'
