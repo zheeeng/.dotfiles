@@ -339,6 +339,7 @@ alias grbi='git rebase -i'
 alias grba='git rebase --abort'
 alias grbc='git rebase --continue'
 alias grbs='git rebase --skip'
+alias grbon='git rebase --onto'
 
 # grm -- git rm, grm~ -- untrack file[s]
 alias grm='git rm'
