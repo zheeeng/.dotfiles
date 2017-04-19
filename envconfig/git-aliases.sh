@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # galias - get git aliases
 _GIT_ALIAS_FILE=$0
 
@@ -11,7 +13,7 @@ galias() {
         \r -a \t\t Alias frequently-used git commands to shorter ones
         \r -h \t\t Print usage
         \r -m [hint] \t List fuzzy matched aliases by hint
-        \r -p [prefix] \t Redefine the git aliases "prefix", the default value is "g"
+        \r -p [prefix] \t Reset the git aliases "prefix", the default value is "g". \033[0;31m Warning: Before you reset the aliases prefix, make sure it will not cause aliases overriding on exist commands. e.g. `galias -p w` add an alias "wc" which is a built-in command and now refers to execute "git commit", it may bring side effects on ".rc" scripts and other stuffs. \033[0m
         \r -u \t\t Unalias setted aliases\n'
 
     success_message='\\rThe git alias prefix is \""$_GIT_ALIAS_PREFIX\"", you can type \""$_GIT_ALIAS_PREFIX\"" instead of \""git\""'
