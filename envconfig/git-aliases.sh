@@ -16,7 +16,7 @@ galias() {
         \r -p [prefix] \t Reset the git aliases "prefix", the default value is "g". \033[0;31m Warning: Before you reset the aliases prefix, make sure it will not cause aliases overriding on exist commands. e.g. `galias -p w` add an alias "wc" which is a built-in command and now refers to execute "git commit", it may bring side effects on ".rc" scripts and other stuffs. \033[0m
         \r -u \t\t Unalias setted aliases\n'
 
-    success_message='\\rThe git alias prefix is \""$_GIT_ALIAS_PREFIX\"", you can type \""$_GIT_ALIAS_PREFIX\"" instead of \""git\""'
+    success_message='\\rThe git alias prefix is \""${_GIT_ALIAS_PREFIX}\"", you can type \""${_GIT_ALIAS_PREFIX}\"" instead of \""git\""'
 
     if [[ $# -eq 0 ]]; then
         sed -n "/^#\ g.*-\{1,2\}.*/,/^$/p" $_GIT_ALIAS_FILE | sed "s/^alias\ //g"
@@ -28,7 +28,7 @@ galias() {
     while getopts ahm:p:u OPT; do
         case $OPT in
             a)
-                . $_GIT_ALIAS_FILE
+                source $_GIT_ALIAS_FILE
                 eval echo $success_message
                 return 0
                 ;;
@@ -38,12 +38,12 @@ galias() {
                 ;;
             m)
                 string=$(echo $OPTARG | sed 's/./&\.\\{0,6\\}/g')
-                sed -n "/^#\ g.*-\{1,2\}.*$string/,/^$/p" $_GIT_ALIAS_FILE | sed "s/^alias\ //g"
+                sed -n "/^#\ g.*-\{1,2\}.*${string}/,/^$/p" $_GIT_ALIAS_FILE | sed "s/^alias\ //g"
                 return 0
                 ;;
             p)
                 _GIT_ALIAS_PREFIX=$OPTARG
-                . $_GIT_ALIAS_FILE
+                source $_GIT_ALIAS_FILE
                 eval echo $success_message
                 return 0
                 ;;
