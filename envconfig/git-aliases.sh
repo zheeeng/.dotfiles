@@ -13,7 +13,7 @@ galias() {
         \r -a \t\t Alias frequently-used git commands to shorter ones
         \r -h \t\t Print usage
         \r -m [hint] \t List fuzzy matched aliases by hint
-        \r -p [prefix] \t Reset the git aliases "prefix", the default value is "g". \033[0;31m Warning: Before you reset the aliases prefix, make sure it will not cause aliases overriding on exist commands. e.g. `galias -p w` add an alias "wc" which is a built-in command and now refers to execute "git commit", it may bring side effects on ".rc" scripts and other stuffs. \033[0m
+        \r -p [prefix] \t Reset the git aliases "prefix", the default value is "g". \e[31m Warning: Before you reset the aliases prefix, make sure it will not cause aliases overriding on exist commands. e.g. `galias -p w` add an alias "wc" which is a built-in command and now refers to execute "git commit", it may bring side effects on ".rc" scripts and other stuffs. \e[0m
         \r -u \t\t Unalias setted aliases\n'
 
     success_message='\\rThe git alias prefix is \""${_GIT_ALIAS_PREFIX}\"", you can type \""${_GIT_ALIAS_PREFIX}\"" instead of \""git\""'
@@ -48,7 +48,20 @@ galias() {
                 return 0
                 ;;
             u)
-                unalias $(sed -n "s/^#alias\ \(.*\)=\'.*\'$/\1/p" $_GIT_ALIAS_FILE)
+                to_unalias=$(sed -n "s/^alias\ \${_GIT_ALIAS_PREFIX}\([[:alnum:]!~]*\)='.*'$/${_GIT_ALIAS_PREFIX}\1/p" $_GIT_ALIAS_FILE | tr '\n' ' ')
+                total_count=$(echo $to_unalias | wc -w)
+                # unalias $(echo $to_unalias) 2>&2 2>&1 1>/dev/null
+                msg=$(eval unalias $to_unalias)
+                # msg=$(echo $to_unalias | unalias 2>&2 2>&1 1>/dev/null)
+                # echo 'msg:'
+                echo $msg
+                # msg=$(unalias $(echo $to_unalias))
+                # msg=$(unalias $(echo $to_unalias) 2>&2)
+                # echo $to_unalias
+                # echo 'msg:' $msg
+                # error_count=$(echo $msg | wc -l)
+                echo '\r\e[32mUnsetted' $total_count 'aliases.\e[0m' $error_count
+                echo '\r\e[31mYou may have already unsetted these aliases. \e[0m'
                 return 0
                 ;;
             \?)
