@@ -16,7 +16,7 @@ galias() {
         \r -p [prefix] \t Reset the git aliases "prefix", the default value is "g". \e[31m Warning: Before you reset the aliases prefix, make sure it will not cause aliases overriding on exist commands. e.g. `galias -p w` add an alias "wc" which is a built-in command and now refers to execute "git commit", it may bring side effects on ".rc" scripts and other stuffs. \e[0m
         \r -u \t\t Unalias setted aliases\n'
 
-    local success_message='\\r\\e\[32mSuccessfully set aliases.\\e\[0m\\n\\rNow the git alias prefix is \""${_GIT_ALIAS_PREFIX}\"", you can just type \""${_GIT_ALIAS_PREFIX}\"" instead of \""git\"". To get the details of aliases, type \""galias\"" or \""galias -m [hint]\""'
+    local success_message='\\rYou specified the new alias prefix \""${_GIT_ALIAS_PREFIX}\"".\\n\\r\\e\[32mSuccessfully set aliases.\\e\[0m\\n\\rNow you can just type \""${_GIT_ALIAS_PREFIX}\"" instead of \""git\"". To get the details of aliases, type \""galias\"" or \""galias -m [hint]\""'
 
     if [[ $# -eq 0 ]]; then
         sed -n "/^# g.*-\{1,2\}.*/,/^$/p" $_GIT_ALIAS_FILE | sed "s/^alias\ //g"
