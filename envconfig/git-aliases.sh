@@ -150,7 +150,7 @@ alias ${_GIT_ALIAS_PREFIX}a='git add'
 alias ${_GIT_ALIAS_PREFIX}a!='git add --force'
 alias ${_GIT_ALIAS_PREFIX}aa='git add --all'
 alias ${_GIT_ALIAS_PREFIX}ap='git add --patch'
-alias ${_GIT_ALIAS_PREFIX}apa='gap'
+alias ${_GIT_ALIAS_PREFIX}apa=${_GIT_ALIAS_PREFIX}'ap'
 alias ${_GIT_ALIAS_PREFIX}ai='git add --interactive'
 alias ${_GIT_ALIAS_PREFIX}au='git add --update'
 alias ${_GIT_ALIAS_PREFIX}aup='git add --update -p'
@@ -160,8 +160,8 @@ alias ${_GIT_ALIAS_PREFIX}ac='git add -A . && git commit'
 alias ${_GIT_ALIAS_PREFIX}ac!='git add -A . && git commit --amend'
 alias ${_GIT_ALIAS_PREFIX}acm='git add -A . && git commit -m'
 alias ${_GIT_ALIAS_PREFIX}acm!='git add -A . && git commit --amend -m'
-alias ${_GIT_ALIAS_PREFIX}acmsg='gacm'
-alias ${_GIT_ALIAS_PREFIX}acmsg!='gacmsg'
+alias ${_GIT_ALIAS_PREFIX}acmsg=${_GIT_ALIAS_PREFIX}'acm'
+alias ${_GIT_ALIAS_PREFIX}acmsg!=${_GIT_ALIAS_PREFIX}'acmsg'
 
 # gar -- git archive
 alias ${_GIT_ALIAS_PREFIX}ar='git archive'
@@ -174,19 +174,17 @@ alias ${_GIT_ALIAS_PREFIX}arzip='_() { ish=${1-HEAD}; if [ -n "`git rev-parse --
 alias ${_GIT_ALIAS_PREFIX}b='git branch'
 alias ${_GIT_ALIAS_PREFIX}b!='git branch --force'
 alias ${_GIT_ALIAS_PREFIX}ba='git branch -avv'
-alias ${_GIT_ALIAS_PREFIX}branches='gba'
 alias ${_GIT_ALIAS_PREFIX}bd='git branch -d'
 alias ${_GIT_ALIAS_PREFIX}bd!='git branch -D'
 alias ${_GIT_ALIAS_PREFIX}bm='git branch -m'
 alias ${_GIT_ALIAS_PREFIX}bm!='git branch -M'
 alias ${_GIT_ALIAS_PREFIX}bmerged='git branch --merged'
 alias ${_GIT_ALIAS_PREFIX}bmerged~='git branch --no-merged'
-alias ${_GIT_ALIAS_PREFIX}bnomerged='gbmerged~'
 alias ${_GIT_ALIAS_PREFIX}bu='git branch --set-upstream-to`'
 alias ${_GIT_ALIAS_PREFIX}bu~='git branch --unset-upstream'
 # delete marged branches
 alias ${_GIT_ALIAS_PREFIX}bdm='_() { git branch --merged ${1-master} | grep -v " ${1-master}$" | xargs -n 1 git branch -d; }; _'
-alias ${_GIT_ALIAS_PREFIX}bdmerged='gbdm'
+alias ${_GIT_ALIAS_PREFIX}bdmerged=${_GIT_ALIAS_PREFIX}'bdm'
 
 # gbl -- git blame
 alias ${_GIT_ALIAS_PREFIX}bl='git blame -b -w'
@@ -197,24 +195,20 @@ alias ${_GIT_ALIAS_PREFIX}bsb='git bisect bad'
 alias ${_GIT_ALIAS_PREFIX}bsg='git bisect good'
 alias ${_GIT_ALIAS_PREFIX}bsr='git bisect run'
 alias ${_GIT_ALIAS_PREFIX}bsre='git bisect reset'
-alias ${_GIT_ALIAS_PREFIX}bsreset='gbsre'
+alias ${_GIT_ALIAS_PREFIX}bsreset=${_GIT_ALIAS_PREFIX}'bsre'
 alias ${_GIT_ALIAS_PREFIX}bss='git bisect start'
 
 # gc - git commit (end with '!' means --amend)
 alias ${_GIT_ALIAS_PREFIX}c='git commit -v'
 alias ${_GIT_ALIAS_PREFIX}c!='git commit -v --amend'
 alias ${_GIT_ALIAS_PREFIX}cgc='git commit --amend --no-edit'
-alias ${_GIT_ALIAS_PREFIX}cgc!='gcgc'
+alias ${_GIT_ALIAS_PREFIX}cgc!=${_GIT_ALIAS_PREFIX}'cgc'
 alias ${_GIT_ALIAS_PREFIX}ca='git commit -v -a'
 alias ${_GIT_ALIAS_PREFIX}ca!='git commit -v -a --amend'
 alias ${_GIT_ALIAS_PREFIX}cm='git commit -m'
 alias ${_GIT_ALIAS_PREFIX}cm!='git commit --amend -m'
 alias ${_GIT_ALIAS_PREFIX}cam='git commit -a -m'
 alias ${_GIT_ALIAS_PREFIX}cam!='git commit -a --amend -m'
-alias ${_GIT_ALIAS_PREFIX}cmsg='gcm'
-alias ${_GIT_ALIAS_PREFIX}cmsg!='gcm!'
-alias ${_GIT_ALIAS_PREFIX}camsg='gcam'
-alias ${_GIT_ALIAS_PREFIX}camsg!='gcam!'
 
 # gcf -- git config
 # Writing operation: Write values into local configuration file by default.
@@ -228,7 +222,7 @@ alias ${_GIT_ALIAS_PREFIX}cff='cat `git rev-parse --git-dir`/config'
 alias ${_GIT_ALIAS_PREFIX}cfrm='git config --remove-section'
 alias ${_GIT_ALIAS_PREFIX}cfrn='git config --rename-section'
 alias ${_GIT_ALIAS_PREFIX}cfso='git config --show-origin'
-alias ${_GIT_ALIAS_PREFIX}cfsoa='gcfl | cut -d= -f1 | while read line; do git config --show-origin $line; done'
+alias ${_GIT_ALIAS_PREFIX}cfsoa=${_GIT_ALIAS_PREFIX}'cfl | cut -d= -f1 | while read line; do git config --show-origin $line; done'
 alias ${_GIT_ALIAS_PREFIX}cfu='git config --unset'
 alias ${_GIT_ALIAS_PREFIX}cfua='git config --unset-all'
 
@@ -262,7 +256,7 @@ alias ${_GIT_ALIAS_PREFIX}cfua!='git config --global --unset-all'
 
 # gcl -- git clone
 alias ${_GIT_ALIAS_PREFIX}cl='git clone --recursive'
-alias ${_GIT_ALIAS_PREFIX}clone='gcl'
+alias ${_GIT_ALIAS_PREFIX}clone=${_GIT_ALIAS_PREFIX}'cl'
 
 # gclean! -- git clean
 alias ${_GIT_ALIAS_PREFIX}clean!='git clean -df'
@@ -306,14 +300,14 @@ alias ${_GIT_ALIAS_PREFIX}count='git count-objects --human-readable'
 # gd - git diff, gda - code review
 alias ${_GIT_ALIAS_PREFIX}d='git diff'
 alias ${_GIT_ALIAS_PREFIX}da='git diff -U99999'
-alias ${_GIT_ALIAS_PREFIX}review='gda'
+alias ${_GIT_ALIAS_PREFIX}review=${_GIT_ALIAS_PREFIX}'da'
 alias ${_GIT_ALIAS_PREFIX}dck='git diff --check'
 alias ${_GIT_ALIAS_PREFIX}dw='git diff --word-diff'
 
 # gd! - git diff --cached
 alias ${_GIT_ALIAS_PREFIX}d!='git diff --cached'
 alias ${_GIT_ALIAS_PREFIX}da!='git diff --cached -U99999'
-alias ${_GIT_ALIAS_PREFIX}review!='gda!'
+alias ${_GIT_ALIAS_PREFIX}review!=${_GIT_ALIAS_PREFIX}'da!'
 alias ${_GIT_ALIAS_PREFIX}dck!='git diff --cached --check'
 alias ${_GIT_ALIAS_PREFIX}dw!='git diff --cached --word-diff'
 
@@ -327,7 +321,8 @@ alias ${_GIT_ALIAS_PREFIX}dvim='git difftool --tool=vimdiff -U99999'
 
 # gde -- git describe
 alias ${_GIT_ALIAS_PREFIX}de='git describe'
-alias ${_GIT_ALIAS_PREFIX}describe='gdesc'
+alias ${_GIT_ALIAS_PREFIX}desc=${_GIT_ALIAS_PREFIX}'de'
+alias ${_GIT_ALIAS_PREFIX}describe=${_GIT_ALIAS_PREFIX}'de'
 alias ${_GIT_ALIAS_PREFIX}det='git describe --tags'
 
 # gf - git fetch
@@ -336,7 +331,6 @@ alias ${_GIT_ALIAS_PREFIX}fa='git fetch --all --tags --prune'
 
 # gi - git init
 alias ${_GIT_ALIAS_PREFIX}i='git init'
-alias ${_GIT_ALIAS_PREFIX}init='gi'
 alias ${_GIT_ALIAS_PREFIX}ib='git init --bare'
 
 # gignore, gignored, gignore~, gunignore -- git ignore or unignore files
@@ -344,7 +338,7 @@ alias ${_GIT_ALIAS_PREFIX}ignore='git update-index --assume-unchanged'
 alias ${_GIT_ALIAS_PREFIX}ignored='git ls-files -v \| grep "^[[:lower:]]"'
 # git unignore files
 alias ${_GIT_ALIAS_PREFIX}ignore~='git update-index --no-assume-unchanged'
-alias ${_GIT_ALIAS_PREFIX}unignore='gignore~'
+alias ${_GIT_ALIAS_PREFIX}unignore=${_GIT_ALIAS_PREFIX}'ignore~'
 
 # glg, glog - git log
 alias ${_GIT_ALIAS_PREFIX}lg='git log --oneline --decorate --color'
@@ -375,11 +369,11 @@ alias ${_GIT_ALIAS_PREFIX}lsr='_() { ls -G $(git ls-tree -r --name-only ${1-HEAD
 alias ${_GIT_ALIAS_PREFIX}m='git merge'
 alias ${_GIT_ALIAS_PREFIX}mnf='git merge --no-ff'
 alias ${_GIT_ALIAS_PREFIX}msq='git merge --squash'
-alias ${_GIT_ALIAS_PREFIX}msquash='gmsq'
+alias ${_GIT_ALIAS_PREFIX}msquash=${_GIT_ALIAS_PREFIX}'msq'
 
 # gmb, ganc -- git merge-base, get common ancestor commit
 alias ${_GIT_ALIAS_PREFIX}mb='git merge-base'
-alias ${_GIT_ALIAS_PREFIX}anc='gmb'
+alias ${_GIT_ALIAS_PREFIX}anc=${_GIT_ALIAS_PREFIX}'mb'
 
 # gmv -- git mv
 alias ${_GIT_ALIAS_PREFIX}mv='git mv'
@@ -390,7 +384,7 @@ alias ${_GIT_ALIAS_PREFIX}pu='git push -u'
 alias ${_GIT_ALIAS_PREFIX}pdb='git push --delete'
 alias ${_GIT_ALIAS_PREFIX}pp='_() {git push $1 && git push --tags $1}; _'
 alias ${_GIT_ALIAS_PREFIX}pd='git push --dry-run'
-alias ${_GIT_ALIAS_PREFIX}pdr='gpd'
+alias ${_GIT_ALIAS_PREFIX}pdr=${_GIT_ALIAS_PREFIX}'pd'
 alias ${_GIT_ALIAS_PREFIX}pt='git push --tags'
 
 # gp! - git push --force
@@ -398,7 +392,7 @@ alias ${_GIT_ALIAS_PREFIX}p!='git push --force'
 alias ${_GIT_ALIAS_PREFIX}pu!='git push --force -u'
 alias ${_GIT_ALIAS_PREFIX}pp!='_() {git push --force $1 && git push --tags --force $1}; _'
 alias ${_GIT_ALIAS_PREFIX}pd!='git push --dry-run --force'
-alias ${_GIT_ALIAS_PREFIX}pdr!='gpd!'
+alias ${_GIT_ALIAS_PREFIX}pdr!=${_GIT_ALIAS_PREFIX}'pd!'
 alias ${_GIT_ALIAS_PREFIX}pt!='git push --tags --force'
 
 # gpl -- git pull
@@ -430,21 +424,21 @@ alias ${_GIT_ALIAS_PREFIX}rm~='git rm --cached'
 # grs -- git reset --mixed
 alias ${_GIT_ALIAS_PREFIX}rs='git reset --mixed'
 alias ${_GIT_ALIAS_PREFIX}rsh='git reset --mixed HEAD --'
-alias ${_GIT_ALIAS_PREFIX}unstage='grsh'
+alias ${_GIT_ALIAS_PREFIX}unstage=${_GIT_ALIAS_PREFIX}'rsh'
 
 # grs~ -- git reset --soft
 alias ${_GIT_ALIAS_PREFIX}rs~='git reset --soft'
 alias ${_GIT_ALIAS_PREFIX}rsh~='git reset --soft HEAD --'
-alias ${_GIT_ALIAS_PREFIX}unstage~='grsh~'
+alias ${_GIT_ALIAS_PREFIX}unstage~=${_GIT_ALIAS_PREFIX}'rsh~'
 
 # grs! -- git reset --hard
 alias ${_GIT_ALIAS_PREFIX}rs!='git reset --hard'
 alias ${_GIT_ALIAS_PREFIX}rsh!='git reset --hard HEAD --'
-alias ${_GIT_ALIAS_PREFIX}unstage!='grsh!'
+alias ${_GIT_ALIAS_PREFIX}unstage!=${_GIT_ALIAS_PREFIX}'rsh!'
 
 # grt -- git root
 alias ${_GIT_ALIAS_PREFIX}rt='cd $(git rev-parse --show-toplevel || echo ".")'
-alias ${_GIT_ALIAS_PREFIX}root='grt'
+alias ${_GIT_ALIAS_PREFIX}root=${_GIT_ALIAS_PREFIX}'rt'
 
 # grv -- git revert
 alias ${_GIT_ALIAS_PREFIX}rv='git revert'
@@ -474,11 +468,11 @@ alias ${_GIT_ALIAS_PREFIX}smfr='git submodule foreach --recursive'
 alias ${_GIT_ALIAS_PREFIX}smi='git submodule init'
 alias ${_GIT_ALIAS_PREFIX}smi~='git submodule deinit'
 alias ${_GIT_ALIAS_PREFIX}smi~!='git submodule deinit --force'
-alias ${_GIT_ALIAS_PREFIX}smdi='gsmi~'
-alias ${_GIT_ALIAS_PREFIX}smdi!='gsmi~!'
+alias ${_GIT_ALIAS_PREFIX}smdi=${_GIT_ALIAS_PREFIX}'smi~'
+alias ${_GIT_ALIAS_PREFIX}smdi!=${_GIT_ALIAS_PREFIX}'smi~!'
 alias ${_GIT_ALIAS_PREFIX}sms='git submodule status --recursive'
 alias ${_GIT_ALIAS_PREFIX}smsum='git submodule summary'
-alias ${_GIT_ALIAS_PREFIX}smsummary='gsmsum'
+alias ${_GIT_ALIAS_PREFIX}smsummary=${_GIT_ALIAS_PREFIX}'smsum'
 alias ${_GIT_ALIAS_PREFIX}smsync='git submodule sync --recursive'
 alias ${_GIT_ALIAS_PREFIX}smu='git submodule update --init --recursive'
 alias ${_GIT_ALIAS_PREFIX}smpla='_() { git submodule foreach --recursive git pull ${1-origin} ${2-master} }; _'
@@ -508,7 +502,7 @@ alias ${_GIT_ALIAS_PREFIX}vt='git verify-tag'
 # gwip - git wip(Work in Progress)
 alias ${_GIT_ALIAS_PREFIX}wip='git add -A && git rm $(git ls-files --deleted) 2> /dev/null; git commit -m "--wip--" && echo "WIP\!"'
 alias ${_GIT_ALIAS_PREFIX}unwip='git log -n 1 | grep -q -c -- "--wip--" && git reset HEAD~1'
-alias ${_GIT_ALIAS_PREFIX}wip~='gunwip'
+alias ${_GIT_ALIAS_PREFIX}wip~=${_GIT_ALIAS_PREFIX}'unwip'
 
 # gwipe -- git wipe current work and leave a wipe savepoint
 alias ${_GIT_ALIAS_PREFIX}wipe='git add -A && git rm $(git ls-files --deleted) 2> /dev/null; git commit -qm "WIPE SAVEPOINT" && git reset HEAD~1 --hard'
