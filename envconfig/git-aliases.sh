@@ -8,7 +8,7 @@ if [[ ! $_GIT_ALIAS_PREFIX =~ ^[[:alnum:]_]{1,}$ ]]; then
 fi
 
 galias() {
-    usage='
+    local usage='
     \rOptions:
         \r -a \t\t Alias frequently-used git commands to shorter ones
         \r -h \t\t Print usage
@@ -16,10 +16,10 @@ galias() {
         \r -p [prefix] \t Reset the git aliases "prefix", the default value is "g". \e[31m Warning: Before you reset the aliases prefix, make sure it will not cause aliases overriding on exist commands. e.g. `galias -p w` add an alias "wc" which is a built-in command and now refers to execute "git commit", it may bring side effects on ".rc" scripts and other stuffs. \e[0m
         \r -u \t\t Unalias setted aliases\n'
 
-    success_message='\\rThe git alias prefix is \""${_GIT_ALIAS_PREFIX}\"", you can type \""${_GIT_ALIAS_PREFIX}\"" instead of \""git\""'
+    local success_message='\\r\\e\[32mSuccessfully set aliases.\\e\[0m\\n\\rNow the git alias prefix is \""${_GIT_ALIAS_PREFIX}\"", you can just type \""${_GIT_ALIAS_PREFIX}\"" instead of \""git\"". To get the details of aliases, type \""galias\"" or \""galias -m [hint]\""'
 
     if [[ $# -eq 0 ]]; then
-        sed -n "/^#\ g.*-\{1,2\}.*/,/^$/p" $_GIT_ALIAS_FILE | sed "s/^alias\ //g"
+        sed -n "/^# g.*-\{1,2\}.*/,/^$/p" $_GIT_ALIAS_FILE | sed "s/^alias\ //g"
         return 0
     fi
 
@@ -44,20 +44,40 @@ galias() {
             p)
                 local TEMP_GIT_ALIAS_PREFIX
                 TEMP_GIT_ALIAS_PREFIX=$OPTARG
-                echo Unalias... wait
                 galias -u
+                echo
                 _GIT_ALIAS_PREFIX=$TEMP_GIT_ALIAS_PREFIX
                 galias -a
                 return 0
                 ;;
             u)
-                to_unalias=$(sed -n "s/^alias\ \${_GIT_ALIAS_PREFIX}\([[:alnum:]!~]*\)='.*'$/${_GIT_ALIAS_PREFIX}\1/p" $_GIT_ALIAS_FILE | tr '\n' ' ')
-                total_count=$(echo $to_unalias | wc -w)
-                eval unalias $to_unalias
-                if [[ $? -eq 0 ]]; then
-                    echo '\r\e[32mUnsetted' $total_count 'aliases.\e[0m'
-                else
-                    echo '\r\e[31mYou may have already unsetted these aliases.\e[0m'
+                local to_unalias
+                local total_count
+                local unalias_fail_msg
+                local total_err_count
+
+                echo "Current alias prefix is \"${_GIT_ALIAS_PREFIX}\". Unalias them... wait"
+
+                # Gather aliases which to unalias
+                to_unalias=$(sed -n "s/^alias \${_GIT_ALIAS_PREFIX}\([[:alnum:]\!~]*\)='.*'$/${_GIT_ALIAS_PREFIX}\1/p" $_GIT_ALIAS_FILE | tr '\n' ' ')
+
+                # Count the number of aliases which to be unaliased
+                total_count=$(echo $to_unalias | wc -w | tr -d ' ')
+
+                # Test unalias execution result and count the number of failure entries.
+                unalias_fail_msg=$(eval unalias $to_unalias 2>&1 > /dev/null | sed -n "s/.*unalias:.* no such hash table element: \([[:alnum:]\!~]*\)$/\1/p" | tr '\n' ' ')
+                total_err_count=$(echo $unalias_fail_msg | wc -w | tr -d ' ' )
+
+                # Evaluation unalias
+                eval unalias $to_unalias 2> /dev/null
+
+                # Print necessary messages
+                if [[ $total_err_count -gt 0 ]]; then
+                    echo '\e[31mYou may have already unsetted these aliases:'
+                    echo $unalias_fail_msg '(total: ' $total_err_count ')\e[0m'
+                fi
+                if [[ $total_count -ne $total_err_count ]]; then
+                    echo '\e[32mSuccessfully unsetted' $((total_count - total_err_count)) 'aliases.\e[0m'
                 fi
                 return 0
                 ;;
