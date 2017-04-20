@@ -42,26 +42,23 @@ galias() {
                 return 0
                 ;;
             p)
-                _GIT_ALIAS_PREFIX=$OPTARG
-                source $_GIT_ALIAS_FILE
-                eval echo $success_message
+                local TEMP_GIT_ALIAS_PREFIX
+                TEMP_GIT_ALIAS_PREFIX=$OPTARG
+                echo Unalias... wait
+                galias -u
+                _GIT_ALIAS_PREFIX=$TEMP_GIT_ALIAS_PREFIX
+                galias -a
                 return 0
                 ;;
             u)
                 to_unalias=$(sed -n "s/^alias\ \${_GIT_ALIAS_PREFIX}\([[:alnum:]!~]*\)='.*'$/${_GIT_ALIAS_PREFIX}\1/p" $_GIT_ALIAS_FILE | tr '\n' ' ')
                 total_count=$(echo $to_unalias | wc -w)
-                # unalias $(echo $to_unalias) 2>&2 2>&1 1>/dev/null
-                msg=$(eval unalias $to_unalias)
-                # msg=$(echo $to_unalias | unalias 2>&2 2>&1 1>/dev/null)
-                # echo 'msg:'
-                echo $msg
-                # msg=$(unalias $(echo $to_unalias))
-                # msg=$(unalias $(echo $to_unalias) 2>&2)
-                # echo $to_unalias
-                # echo 'msg:' $msg
-                # error_count=$(echo $msg | wc -l)
-                echo '\r\e[32mUnsetted' $total_count 'aliases.\e[0m' $error_count
-                echo '\r\e[31mYou may have already unsetted these aliases. \e[0m'
+                eval unalias $to_unalias
+                if [[ $? -eq 0 ]]; then
+                    echo '\r\e[32mUnsetted' $total_count 'aliases.\e[0m'
+                else
+                    echo '\r\e[31mYou may have already unsetted these aliases.\e[0m'
+                fi
                 return 0
                 ;;
             \?)
