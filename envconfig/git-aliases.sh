@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 
-# galias - get git aliases
 _GIT_ALIAS_FILE=$0
 
 if [[ ! $_GIT_ALIAS_PREFIX =~ ^[[:alnum:]_]{1,}$ ]]; then
@@ -12,14 +11,14 @@ galias() {
     \rOptions:
         \r -a \t\t Alias frequently-used git commands to shorter ones
         \r -h \t\t Print usage
-        \r -m [hint] \t List fuzzy matched aliases by hint
+        \r -m [hint] \t List fuzzy matched aliases by hint, the alias descriptions employ the initial aliases prefix "g"
         \r -p [prefix] \t Reset the git aliases "prefix", the default value is "g". \e[31m Warning: Before you reset the aliases prefix, make sure it will not cause aliases overriding on exist commands. e.g. `galias -p w` add an alias "wc" which is a built-in command and now refers to execute "git commit", it may bring side effects on ".rc" scripts and other stuffs. \e[0m
         \r -u \t\t Unalias setted aliases\n'
 
     local success_message='\\rYou specified the new alias prefix \""${_GIT_ALIAS_PREFIX}\"".\\n\\r\\e\[32mSuccessfully set aliases.\\e\[0m\\n\\rNow you can just type \""${_GIT_ALIAS_PREFIX}\"" instead of \""git\"". To get the details of aliases, type \""galias\"" or \""galias -m [hint]\""'
 
     if [[ $# -eq 0 ]]; then
-        sed -n "/^# g.*-\{1,2\}.*/,/^$/p" $_GIT_ALIAS_FILE | sed "s/^alias\ //g"
+        galias -m alias
         return 0
     fi
 
@@ -37,15 +36,15 @@ galias() {
                 return 0
                 ;;
             m)
-                string=$(echo $OPTARG | sed 's/./&\.\\{0,6\\}/g')
-                sed -n "/^#\ g.*-\{1,2\}.*${string}/,/^$/p" $_GIT_ALIAS_FILE | sed "s/^alias\ //g"
+                patt=$(echo $OPTARG | sed 's/./&\.\\{0,6\\}/g')
+                sed -n "/^# g[^-]* -\{1,2\} .*${patt}/,/^$/p" $_GIT_ALIAS_FILE \
+                 | sed -e "s/^alias \${_GIT_ALIAS_PREFIX}/${_GIT_ALIAS_PREFIX}/" -e '$d'
                 return 0
                 ;;
             p)
                 local TEMP_GIT_ALIAS_PREFIX
                 TEMP_GIT_ALIAS_PREFIX=$OPTARG
                 galias -u
-                echo
                 _GIT_ALIAS_PREFIX=$TEMP_GIT_ALIAS_PREFIX
                 galias -a
                 return 0
@@ -89,7 +88,7 @@ galias() {
     done
 }
 
-# git aliases outline - aliases <-> commands
+# git aliases outline(with initial prefix "g") - git aliases <-> commands
 #|----------------------------------------
 #| galias - get git aliases
 #| g - git
@@ -157,6 +156,7 @@ alias ${_GIT_ALIAS_PREFIX}apa='gap'
 alias ${_GIT_ALIAS_PREFIX}ai='git add --interactive'
 alias ${_GIT_ALIAS_PREFIX}au='git add --update'
 alias ${_GIT_ALIAS_PREFIX}aup='git add --update -p'
+
 # gac -- git add && commit
 alias ${_GIT_ALIAS_PREFIX}ac='git add -A . && git commit'
 alias ${_GIT_ALIAS_PREFIX}ac!='git add -A . && git commit --amend'
