@@ -36,7 +36,7 @@ galias() {
             m)
                 patt=$(echo $OPTARG | sed 's/./&\.\\{0,6\\}/g')
                 sed -n "/^# g[^-]* -\{1,2\} .*${patt}/,/^$/p" $_GIT_ALIAS_FILE \
-                 | sed -e "s/^alias \${_GIT_ALIAS_PREFIX}/${_GIT_ALIAS_PREFIX}/" -e '$d'
+                 | sed -e "s/\${_GIT_ALIAS_PREFIX}\('\{0,1\}\)/\1${_GIT_ALIAS_PREFIX}/g" -e '$d'
                 return 0
                 ;;
             p)
