@@ -1,5 +1,3 @@
-#!/usr/bin/env bash
-
 _GIT_ALIAS_FILE=$0
 
 if [[ ! $_GIT_ALIAS_PREFIX =~ ^[[:alnum:]_]{1,}$ ]]; then
