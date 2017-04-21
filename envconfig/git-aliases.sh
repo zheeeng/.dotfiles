@@ -290,9 +290,9 @@ alias ${_GIT_ALIAS_PREFIX}coo~!='git checkout -f -m --orphan'
 
 # gcp -- git cherry-pick
 alias ${_GIT_ALIAS_PREFIX}cp='git cherry-pick'
-alias ${_GIT_ALIAS_PREFIX}cpa -- git cherry-pick --abort
-alias ${_GIT_ALIAS_PREFIX}cpc -- git cherry-pick --continue
-alias ${_GIT_ALIAS_PREFIX}cpq -- git cherry-pick --quit
+alias ${_GIT_ALIAS_PREFIX}cpa='git cherry-pick --abort'
+alias ${_GIT_ALIAS_PREFIX}cpc='git cherry-pick --continue'
+alias ${_GIT_ALIAS_PREFIX}cpq='git cherry-pick --quit'
 
 # gcount -- git count-objects
 alias ${_GIT_ALIAS_PREFIX}count='git count-objects --human-readable'
