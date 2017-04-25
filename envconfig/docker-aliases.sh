@@ -236,7 +236,7 @@ alias ${_DOCKER_ALIAS_PREFIX}rs='docker restart'
 alias ${_DOCKER_ALIAS_PREFIX}s='docker start'
 
 #| dks~, dkstop - docker stop
-alias ${_DOCKER_ALIAS_PREFIX}ks~='docker stop'
+alias ${_DOCKER_ALIAS_PREFIX}s~='docker stop'
 alias ${_DOCKER_ALIAS_PREFIX}stop=${_DOCKER_ALIAS_PREFIX}'ks~'
 
 #| dksave -- docker save
