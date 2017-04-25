@@ -133,133 +133,184 @@ dkalias() {
 
 # dk - docker
 alias ${_DOCKER_ALIAS_PREFIX}='docker'
+alias ${_DOCKER_ALIAS_PREFIX}?='docker --help'
 
 #| dka - docker attach
 alias ${_DOCKER_ALIAS_PREFIX}a='docker attach'
+alias ${_DOCKER_ALIAS_PREFIX}a?='docker attach --help'
 
 # dkb - docker build
 alias ${_DOCKER_ALIAS_PREFIX}b='docker build'
+alias ${_DOCKER_ALIAS_PREFIX}b?='docker build --help'
 
 #| dkc - docker commit
 alias ${_DOCKER_ALIAS_PREFIX}c='docker commit'
+alias ${_DOCKER_ALIAS_PREFIX}c?='docker commit --help'
 
 #| dkcp -- docker cp
 alias ${_DOCKER_ALIAS_PREFIX}cp='docker cp'
+alias ${_DOCKER_ALIAS_PREFIX}cp?='docker cp --help'
 
 #| dkcr -- docker create
 alias ${_DOCKER_ALIAS_PREFIX}cr='docker create'
+alias ${_DOCKER_ALIAS_PREFIX}cr?='docker create --help'
 
 #| dkd - docker deploy
 alias ${_DOCKER_ALIAS_PREFIX}d='docker deploy'
+alias ${_DOCKER_ALIAS_PREFIX}d?='docker deploy --help'
 
 #| dkdf -- docker diff
 alias ${_DOCKER_ALIAS_PREFIX}df='docker diff'
+alias ${_DOCKER_ALIAS_PREFIX}df?='docker diff --help'
 
 #| dke, dkep - docker export
 alias ${_DOCKER_ALIAS_PREFIX}de='docker export'
+alias ${_DOCKER_ALIAS_PREFIX}de?='docker export --help'
 alias ${_DOCKER_ALIAS_PREFIX}dep=${_DOCKER_ALIAS_PREFIX}'de'
+alias ${_DOCKER_ALIAS_PREFIX}dep?=${_DOCKER_ALIAS_PREFIX}'de --help'
 
 #| dkev -- docker event
 alias ${_DOCKER_ALIAS_PREFIX}ev='docker event'
+alias ${_DOCKER_ALIAS_PREFIX}ev?='docker event --help'
 
 #| dkexe, dkexec -- docker exec
 alias ${_DOCKER_ALIAS_PREFIX}exe='docker exec'
+alias ${_DOCKER_ALIAS_PREFIX}exe?='docker exec --help'
 alias ${_DOCKER_ALIAS_PREFIX}exec=${_DOCKER_ALIAS_PREFIX}'exe'
+alias ${_DOCKER_ALIAS_PREFIX}exec?=${_DOCKER_ALIAS_PREFIX}'exe --help'
 
 #| dkh - docker history
 alias ${_DOCKER_ALIAS_PREFIX}h='docker history'
+alias ${_DOCKER_ALIAS_PREFIX}h?='docker history --help'
 
 #| dki, dkip - docker import
 alias ${_DOCKER_ALIAS_PREFIX}i='docker import'
+alias ${_DOCKER_ALIAS_PREFIX}i?='docker import --help'
 alias ${_DOCKER_ALIAS_PREFIX}ip=${_DOCKER_ALIAS_PREFIX}'i'
+alias ${_DOCKER_ALIAS_PREFIX}ip?=${_DOCKER_ALIAS_PREFIX}'i --help'
 
 #| dkimgs -- docker images
 alias ${_DOCKER_ALIAS_PREFIX}imgs='docker images'
+alias ${_DOCKER_ALIAS_PREFIX}imgs?='docker images --help'
 
 #| dkinfo -- docker info
 alias ${_DOCKER_ALIAS_PREFIX}info='docker info'
+alias ${_DOCKER_ALIAS_PREFIX}info?='docker info --help'
 
 #| dkins -- docker inspect
 alias ${_DOCKER_ALIAS_PREFIX}ins='docker inspect'
+alias ${_DOCKER_ALIAS_PREFIX}ins?='docker inspect --help'
 
 #| dkk - docker kill
 alias ${_DOCKER_ALIAS_PREFIX}k='docker kill'
+alias ${_DOCKER_ALIAS_PREFIX}k?='docker kill --help'
 
 #| dkl, dkld - docker load
 alias ${_DOCKER_ALIAS_PREFIX}l='docker load'
+alias ${_DOCKER_ALIAS_PREFIX}l?='docker load --help'
 alias ${_DOCKER_ALIAS_PREFIX}ld=${_DOCKER_ALIAS_PREFIX}'l'
+alias ${_DOCKER_ALIAS_PREFIX}ld?=${_DOCKER_ALIAS_PREFIX}'l --help'
 
 #| dkli, dklogin -- docker login
 alias ${_DOCKER_ALIAS_PREFIX}li='docker login'
+alias ${_DOCKER_ALIAS_PREFIX}li?='docker login --help'
 alias ${_DOCKER_ALIAS_PREFIX}login=${_DOCKER_ALIAS_PREFIX}'li'
+alias ${_DOCKER_ALIAS_PREFIX}login?=${_DOCKER_ALIAS_PREFIX}'li --help'
 
 #| dklo, dklogout -- docker logout
 alias ${_DOCKER_ALIAS_PREFIX}lo='docker logout'
+alias ${_DOCKER_ALIAS_PREFIX}lo?='docker logout --help'
 alias ${_DOCKER_ALIAS_PREFIX}logout=${_DOCKER_ALIAS_PREFIX}'lo'
+alias ${_DOCKER_ALIAS_PREFIX}logout?=${_DOCKER_ALIAS_PREFIX}'lo --help'
 
 #| dklg, dklog -- docker logs
 alias ${_DOCKER_ALIAS_PREFIX}lg='docker logs'
+alias ${_DOCKER_ALIAS_PREFIX}lg?='docker logs --help'
 alias ${_DOCKER_ALIAS_PREFIX}log=${_DOCKER_ALIAS_PREFIX}'lg'
+alias ${_DOCKER_ALIAS_PREFIX}log?=${_DOCKER_ALIAS_PREFIX}'lg --help'
 
 #| dkp - docker push
 alias ${_DOCKER_ALIAS_PREFIX}p='docker push'
+alias ${_DOCKER_ALIAS_PREFIX}p?='docker push --help'
 
 #| dkpause, dkunpause -- docker pause or docker unpause
 alias ${_DOCKER_ALIAS_PREFIX}pause='docker pause'
+alias ${_DOCKER_ALIAS_PREFIX}pause?='docker pause --help'
 alias ${_DOCKER_ALIAS_PREFIX}unpause='docker unpause'
+alias ${_DOCKER_ALIAS_PREFIX}unpause?='docker unpause --help'
 
 #| dkport -- docker port
 alias ${_DOCKER_ALIAS_PREFIX}port='docker port'
+alias ${_DOCKER_ALIAS_PREFIX}port?='docker port --help'
 
 #| dkps -- docker ps
 alias ${_DOCKER_ALIAS_PREFIX}ps='docker ps'
+alias ${_DOCKER_ALIAS_PREFIX}ps?='docker ps --help'
 
 #| dkpl -- docker pull
 alias ${_DOCKER_ALIAS_PREFIX}pl='docker pull'
+alias ${_DOCKER_ALIAS_PREFIX}pl?='docker pull --help'
 
 #| dkr - docker run
 alias ${_DOCKER_ALIAS_PREFIX}r='docker run'
+alias ${_DOCKER_ALIAS_PREFIX}r?='docker run --help'
 
 #| dkrm -- docker rm
 alias ${_DOCKER_ALIAS_PREFIX}rm='docker rm'
+alias ${_DOCKER_ALIAS_PREFIX}rm?='docker rm --help'
 
 #| dkrmi -- docker rmi
 alias ${_DOCKER_ALIAS_PREFIX}rmi='docker rmi'
+alias ${_DOCKER_ALIAS_PREFIX}rmi?='docker rmi --help'
 
 #| dkrn -- docker rename
 alias ${_DOCKER_ALIAS_PREFIX}rn='docker rename'
+alias ${_DOCKER_ALIAS_PREFIX}rn?='docker rename --help'
 
 #| dkrs -- docker restart
 alias ${_DOCKER_ALIAS_PREFIX}rs='docker restart'
+alias ${_DOCKER_ALIAS_PREFIX}rs?='docker restart --help'
 
 #| dks - docker start
 alias ${_DOCKER_ALIAS_PREFIX}s='docker start'
+alias ${_DOCKER_ALIAS_PREFIX}s?='docker start --help'
 
 #| dks~, dkstop - docker stop
 alias ${_DOCKER_ALIAS_PREFIX}s~='docker stop'
+alias ${_DOCKER_ALIAS_PREFIX}s?~='docker stop --help'
 alias ${_DOCKER_ALIAS_PREFIX}stop=${_DOCKER_ALIAS_PREFIX}'ks~'
+alias ${_DOCKER_ALIAS_PREFIX}stop?=${_DOCKER_ALIAS_PREFIX}'ks~ --help'
 
 #| dksave -- docker save
 alias ${_DOCKER_ALIAS_PREFIX}save='docker save'
+alias ${_DOCKER_ALIAS_PREFIX}save?='docker save --help'
 
 #| dksear, dksearch -- docker search
 alias ${_DOCKER_ALIAS_PREFIX}sear='docker search'
+alias ${_DOCKER_ALIAS_PREFIX}sear?='docker search --help'
 alias ${_DOCKER_ALIAS_PREFIX}search=${_DOCKER_ALIAS_PREFIX}'sear'
+alias ${_DOCKER_ALIAS_PREFIX}search?=${_DOCKER_ALIAS_PREFIX}'sear --help'
 
 #| dkst -- docker stats
 alias ${_DOCKER_ALIAS_PREFIX}st='docker stats'
+alias ${_DOCKER_ALIAS_PREFIX}st?='docker stats --help'
 
 #| dkt - docker tag
 alias ${_DOCKER_ALIAS_PREFIX}t='docker tag'
+alias ${_DOCKER_ALIAS_PREFIX}t?='docker tag --help'
 
 #| dktop -- docker top
 alias ${_DOCKER_ALIAS_PREFIX}top='docker top'
+alias ${_DOCKER_ALIAS_PREFIX}top?='docker top --help'
 
 #| dku - docker update
 alias ${_DOCKER_ALIAS_PREFIX}u='docker update'
+alias ${_DOCKER_ALIAS_PREFIX}u?='docker update --help'
 
 #| dkv - docker version
 alias ${_DOCKER_ALIAS_PREFIX}v='docker version'
+alias ${_DOCKER_ALIAS_PREFIX}v?='docker version --help'
 
 #| dkw - docker wait
 alias ${_DOCKER_ALIAS_PREFIX}w='docker wait'
+alias ${_DOCKER_ALIAS_PREFIX}w?='docker wait --help'
