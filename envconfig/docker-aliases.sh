@@ -245,6 +245,11 @@ alias ${_DOCKER_ALIAS_PREFIX}port?='docker port --help'
 
 #| dkps -- docker ps
 alias ${_DOCKER_ALIAS_PREFIX}ps='docker ps'
+alias ${_DOCKER_ALIAS_PREFIX}psa='docker ps -a'
+alias ${_DOCKER_ALIAS_PREFIX}psf='docker ps -f'
+alias ${_DOCKER_ALIAS_PREFIX}psfmt='docker ps --format'
+alias ${_DOCKER_ALIAS_PREFIX}psl='docker ps -l' # Show the latest created container (includes all states)
+alias ${_DOCKER_ALIAS_PREFIX}psn='docker ps -n' # Show n last created containers (includes all states) (default -1)
 alias ${_DOCKER_ALIAS_PREFIX}ps?='docker ps --help'
 
 #| dkpl -- docker pull
