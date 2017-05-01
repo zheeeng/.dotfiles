@@ -131,6 +131,7 @@ dkalias() {
 #| dktop -- docker top
 #| dku - docker update
 #| dkv - docker version
+#| dkvol - docker volume *
 #| dkw - docker wait
 
 # dk - docker
@@ -324,6 +325,18 @@ alias ${_DOCKER_ALIAS_PREFIX}u?='docker update --help'
 #| dkv - docker version
 alias ${_DOCKER_ALIAS_PREFIX}v='docker version'
 alias ${_DOCKER_ALIAS_PREFIX}v?='docker version --help'
+
+#| dkvol -- docker volume
+alias ${_DOCKER_ALIAS_PREFIX}vol='docker volume'
+alias ${_DOCKER_ALIAS_PREFIX}volc='docker volume create'
+alias ${_DOCKER_ALIAS_PREFIX}volins='docker volume inspect'
+alias ${_DOCKER_ALIAS_PREFIX}volinsf='docker volume inspect --format'
+alias ${_DOCKER_ALIAS_PREFIX}voll='docker volume ls'
+alias ${_DOCKER_ALIAS_PREFIX}vollf='docker volume ls -f'
+alias ${_DOCKER_ALIAS_PREFIX}vollfmt='docker volume ls --format'
+alias ${_DOCKER_ALIAS_PREFIX}volprune='docker volume prune'
+alias ${_DOCKER_ALIAS_PREFIX}volrm='docker volume rm'
+alias ${_DOCKER_ALIAS_PREFIX}vol?='docker volume --help'
 
 #| dkw - docker wait
 alias ${_DOCKER_ALIAS_PREFIX}w='docker wait'
