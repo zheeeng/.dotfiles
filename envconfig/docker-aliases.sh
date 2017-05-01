@@ -87,6 +87,7 @@ dkalias() {
 }
 
 # docker aliases outline(with initial prefix "dk") - docker aliases <-> commands
+# '*' means sub command alias
 #|----------------------------------------
 #| dkalias - get docker aliases
 #| dk - docker
@@ -94,6 +95,7 @@ dkalias() {
 #| dkb - docker build
 #| dkc - docker commit
 #| dkcp -- docker cp
+#| dkcpt -- docker checkpoint *
 #| dkcr -- docker create
 #| dkd - docker deploy
 #| dkdf -- docker diff
@@ -150,6 +152,13 @@ alias ${_DOCKER_ALIAS_PREFIX}c?='docker commit --help'
 #| dkcp -- docker cp
 alias ${_DOCKER_ALIAS_PREFIX}cp='docker cp'
 alias ${_DOCKER_ALIAS_PREFIX}cp?='docker cp --help'
+
+#| dkcpt -- docker checkpoint *
+alias ${_DOCKER_ALIAS_PREFIX}cpt='docker checkpoint'
+alias ${_DOCKER_ALIAS_PREFIX}cptc='docker checkpoint create'
+alias ${_DOCKER_ALIAS_PREFIX}cptl='docker checkpoint ls'
+alias ${_DOCKER_ALIAS_PREFIX}cptrm='docker checkpoint rm'
+alias ${_DOCKER_ALIAS_PREFIX}cpt?='docker checkpoint --help'
 
 #| dkcr -- docker create
 alias ${_DOCKER_ALIAS_PREFIX}cr='docker create'
