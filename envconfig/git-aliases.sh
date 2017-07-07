@@ -367,6 +367,7 @@ alias ${_GIT_ALIAS_PREFIX}lsr='_() { ls -G $(git ls-tree -r --name-only ${1-HEAD
 
 # gm - git merge
 alias ${_GIT_ALIAS_PREFIX}m='git merge'
+alias ${_GIT_ALIAS_PREFIX}ma='git merge --abort'
 alias ${_GIT_ALIAS_PREFIX}mnf='git merge --no-ff'
 alias ${_GIT_ALIAS_PREFIX}msq='git merge --squash'
 alias ${_GIT_ALIAS_PREFIX}msquash=${_GIT_ALIAS_PREFIX}'msq'
