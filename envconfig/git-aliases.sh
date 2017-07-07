@@ -443,6 +443,7 @@ alias ${_GIT_ALIAS_PREFIX}root=${_GIT_ALIAS_PREFIX}'rt'
 
 # grv -- git revert
 alias ${_GIT_ALIAS_PREFIX}rv='git revert'
+alias ${_GIT_ALIAS_PREFIX}rvn='git revert -n'
 alias ${_GIT_ALIAS_PREFIX}rva='git revert --abort'
 alias ${_GIT_ALIAS_PREFIX}rvc='git revert --continue'
 alias ${_GIT_ALIAS_PREFIX}rvq='git revert --quit'
