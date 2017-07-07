@@ -137,7 +137,7 @@ galias() {
 #| gshow, gcat -- git show/cat file content
 #| gsl -- git shortlog
 #| gsm -- git submodule
-#| gsta -- git stash
+#| gsta -- git stash -p
 #| gt - git tag && verify-tag
 #| gwip - git wip(Work in Progress)
 #| gwipe -- git wipe current work and leave a wipe savepoint
@@ -481,7 +481,7 @@ alias ${_GIT_ALIAS_PREFIX}smpla='_() { git submodule foreach --recursive git pul
 alias ${_GIT_ALIAS_PREFIX}smpla!='_() { git submodule foreach --recursive git pull --force ${1-origin} ${2-master} }; _'
 
 # gsta -- git stash
-alias ${_GIT_ALIAS_PREFIX}sta='git stash'
+alias ${_GIT_ALIAS_PREFIX}sta='git stash -p'
 alias ${_GIT_ALIAS_PREFIX}stau='git stash --include-untracked' # Above git version 1.7.7, use it replace gwip
 alias ${_GIT_ALIAS_PREFIX}staa='git stash apply'
 alias ${_GIT_ALIAS_PREFIX}stac!='git stash clear'
