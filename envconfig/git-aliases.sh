@@ -482,6 +482,7 @@ alias ${_GIT_ALIAS_PREFIX}smpla!='_() { git submodule foreach --recursive git pu
 
 # gsta -- git stash
 alias ${_GIT_ALIAS_PREFIX}sta='git stash -p'
+alias ${_GIT_ALIAS_PREFIX}stak='git stash --keep-index' # Stash changes which are not added into index zone
 alias ${_GIT_ALIAS_PREFIX}stau='git stash --include-untracked' # Above git version 1.7.7, use it replace gwip
 alias ${_GIT_ALIAS_PREFIX}staa='git stash apply'
 alias ${_GIT_ALIAS_PREFIX}stac!='git stash clear'
