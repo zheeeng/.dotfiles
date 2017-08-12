@@ -341,14 +341,14 @@ alias ${_GIT_ALIAS_PREFIX}ignore~='git update-index --no-assume-unchanged'
 alias ${_GIT_ALIAS_PREFIX}unignore=${_GIT_ALIAS_PREFIX}'ignore~'
 
 # glg, glog - git log
-alias ${_GIT_ALIAS_PREFIX}lg='git log --oneline --decorate --color'
-alias ${_GIT_ALIAS_PREFIX}log='git log --stat --notes --show-signature --decorate --color -p'
+alias ${_GIT_ALIAS_PREFIX}lg='git log --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit'
+alias ${_GIT_ALIAS_PREFIX}log='git log --stat --notes --show-signature -p'
 
 # glt - git 'log-tree'
-alias ${_GIT_ALIAS_PREFIX}lt='git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit'
-alias ${_GIT_ALIAS_PREFIX}lta='git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit --all'
+alias ${_GIT_ALIAS_PREFIX}lt=${_GIT_ALIAS_PREFIX}'lg --graph'
+alias ${_GIT_ALIAS_PREFIX}lta=${_GIT_ALIAS_PREFIX}'lg --graph --all'
 # Show the whole log tree including which mentioned by reflogs
-alias ${_GIT_ALIAS_PREFIX}ltw='git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit --all --reflog'
+alias ${_GIT_ALIAS_PREFIX}ltw=${_GIT_ALIAS_PREFIX}'lg --graph --all --reflog'
 
 # glast - git 'last-log'
 alias ${_GIT_ALIAS_PREFIX}last='git log -1 --notes --show-signature --log-size -p'
