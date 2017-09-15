@@ -125,6 +125,7 @@ galias() {
 #| gp - git push, gpp - git push all branches and their tags
 #| gp! - git push --force
 #| gpl -- git pull
+#| gpl! -- git pull --force
 #| gr - git remote
 #| grb -- git rebase
 #| grm -- git rm, grm~ -- untrack file[s]
@@ -399,6 +400,10 @@ alias ${_GIT_ALIAS_PREFIX}pt!='git push --tags --force'
 # gpl -- git pull
 alias ${_GIT_ALIAS_PREFIX}pl='git pull --tags'
 alias ${_GIT_ALIAS_PREFIX}plr='git pull --tags --rebase'
+
+# gpl！ -- git pull --force
+alias ${_GIT_ALIAS_PREFIX}pl!='git pull --tags --force'
+alias ${_GIT_ALIAS_PREFIX}plr!='git pull --tags --rebase --force'
 
 # gr - git remote
 alias ${_GIT_ALIAS_PREFIX}r='git remote -v'
