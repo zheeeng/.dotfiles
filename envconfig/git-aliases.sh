@@ -301,6 +301,7 @@ alias ${_GIT_ALIAS_PREFIX}count='git count-objects --human-readable'
 # gd - git diff, gda - code review
 alias ${_GIT_ALIAS_PREFIX}d='git diff'
 alias ${_GIT_ALIAS_PREFIX}da='git diff -U99999'
+alias ${_GIT_ALIAS_PREFIX}dn='git diff --name-status'
 alias ${_GIT_ALIAS_PREFIX}review=${_GIT_ALIAS_PREFIX}'da'
 alias ${_GIT_ALIAS_PREFIX}dck='git diff --check'
 alias ${_GIT_ALIAS_PREFIX}dw='git diff --word-diff'
