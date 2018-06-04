@@ -15,6 +15,8 @@ alias rmdir='rm -rf'
 alias cpdir='cp -rf'
 alias mkcd='_(){ mkdir $1; cd $1; }; _'
 alias webshare='python -c "import SimpleHTTPServer;SimpleHTTPServer.test()"'
+alias mlre="pbpaste | refmt --parse ml --print re --interface false | pbcopy"
+alias reml="pbpaste | refmt --parse re --print ml --interface false | pbcopy"
 
 # greps
 alias aligrep='alias | grep'
