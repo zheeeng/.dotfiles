@@ -372,9 +372,9 @@ alias ${_GIT_ALIAS_PREFIX}m='git merge'
 alias ${_GIT_ALIAS_PREFIX}mg='git merge'
 alias ${_GIT_ALIAS_PREFIX}mga='git merge --abort'
 alias ${_GIT_ALIAS_PREFIX}mgc='git merge --continue'
-alias ${_GIT_ALIAS_PREFIX}mnf='git merge --no-ff'
-alias ${_GIT_ALIAS_PREFIX}msq='git merge --squash'
-alias ${_GIT_ALIAS_PREFIX}msquash=${_GIT_ALIAS_PREFIX}'msq'
+alias ${_GIT_ALIAS_PREFIX}mgnf='git merge --no-ff'
+alias ${_GIT_ALIAS_PREFIX}mgsq='git merge --squash'
+alias ${_GIT_ALIAS_PREFIX}mgsquash='git merge --squash'
 
 # gmb, ganc -- git merge-base, get common ancestor commit
 alias ${_GIT_ALIAS_PREFIX}mb='git merge-base'
