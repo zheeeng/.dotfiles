@@ -119,7 +119,7 @@ galias() {
 #| glast - git 'last-log'
 #| glf -- git ls-files, glf~ -- list untracked files or folders under current dir
 #| gll, gls  -- git ls-tree, list tracked files with properties or tracked files in columns
-#| gm - git merge
+#| gm, gmg - git merge
 #| gmb, ganc -- git merge-base, get common ancestor commit
 #| gmv -- git mv
 #| gp - git push, gpp - git push all branches and their tags
@@ -367,9 +367,11 @@ alias ${_GIT_ALIAS_PREFIX}ls='_() { ls -dG $(git ls-tree --name-only ${1-HEAD}) 
 alias ${_GIT_ALIAS_PREFIX}llr='_() { ls -lhG $(git ls-tree -r --name-only ${1-HEAD}) }; _'
 alias ${_GIT_ALIAS_PREFIX}lsr='_() { ls -G $(git ls-tree -r --name-only ${1-HEAD}) }; _'
 
-# gm - git merge
+# gm, gmg - git merge
 alias ${_GIT_ALIAS_PREFIX}m='git merge'
-alias ${_GIT_ALIAS_PREFIX}ma='git merge --abort'
+alias ${_GIT_ALIAS_PREFIX}mg='git merge'
+alias ${_GIT_ALIAS_PREFIX}mga='git merge --abort'
+alias ${_GIT_ALIAS_PREFIX}mgc='git merge --continue'
 alias ${_GIT_ALIAS_PREFIX}mnf='git merge --no-ff'
 alias ${_GIT_ALIAS_PREFIX}msq='git merge --squash'
 alias ${_GIT_ALIAS_PREFIX}msquash=${_GIT_ALIAS_PREFIX}'msq'
