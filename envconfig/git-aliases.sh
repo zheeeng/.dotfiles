@@ -91,7 +91,6 @@ galias() {
 #| galias - get git aliases
 #| g - git
 #| ga - git add
-#| gac -- git add && commit
 #| gar -- git archive
 #| gb - git branch
 #| gbl -- git blame
@@ -155,14 +154,6 @@ alias ${_GIT_ALIAS_PREFIX}apa=${_GIT_ALIAS_PREFIX}'ap'
 alias ${_GIT_ALIAS_PREFIX}ai='git add --interactive'
 alias ${_GIT_ALIAS_PREFIX}au='git add --update'
 alias ${_GIT_ALIAS_PREFIX}aup='git add --update -p'
-
-# gac -- git add && commit
-alias ${_GIT_ALIAS_PREFIX}ac='git add -A . && git commit'
-alias ${_GIT_ALIAS_PREFIX}ac!='git add -A . && git commit --amend'
-alias ${_GIT_ALIAS_PREFIX}acm='git add -A . && git commit -m'
-alias ${_GIT_ALIAS_PREFIX}acm!='git add -A . && git commit --amend -m'
-alias ${_GIT_ALIAS_PREFIX}acmsg=${_GIT_ALIAS_PREFIX}'acm'
-alias ${_GIT_ALIAS_PREFIX}acmsg!=${_GIT_ALIAS_PREFIX}'acmsg'
 
 # gar -- git archive
 alias ${_GIT_ALIAS_PREFIX}ar='git archive'
