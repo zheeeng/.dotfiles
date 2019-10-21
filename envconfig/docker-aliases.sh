@@ -291,8 +291,7 @@ alias ${_DOCKER_ALIAS_PREFIX}s='docker start'
 alias ${_DOCKER_ALIAS_PREFIX}sh='docker start --help'
 
 #| dks~, dkstop - docker stop
-alias ${_DOCKER_ALIAS_PREFIX}s~='docker stop'
-alias ${_DOCKER_ALIAS_PREFIX}s?~='docker stop --help'
+alias ${_DOCKER_ALIAS_PREFIX}ss='docker stop'
 alias ${_DOCKER_ALIAS_PREFIX}stop=${_DOCKER_ALIAS_PREFIX}'ks~'
 alias ${_DOCKER_ALIAS_PREFIX}stoph=${_DOCKER_ALIAS_PREFIX}'ks~ --help'
 
