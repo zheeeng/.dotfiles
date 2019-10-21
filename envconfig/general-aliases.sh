@@ -23,3 +23,6 @@ alias aligrep='alias | grep'
 alias aliasgrep='aligrep'
 alias hisgrep='history | grep'
 alias psgrep='ps | grep'
+
+# fp455
+alias fp=' fp455'
